@@ -18,6 +18,12 @@ python run.py \
         --seed 111 \
         --pdb_path "./inputs/1BC8.pdb" \
         --out_folder "./outputs/default"
+
+python run.py --seed 42 \
+ --pdb_path "./inputs/sample_0.pdb" \
+ --out_folder "./outputs_test/sample_seq" \
+ --model_type "ligand_mpnn" \
+ --checkpoint_protein_mpnn "./model_params/proteinmpnn_v_48_002.pt"
 ```
 
 ### Dependencies
