@@ -11,8 +11,8 @@ cd LigandMPNN
 bash get_model_params.sh "./model_params"
 
 #setup your conda/or other environment
-#conda create -n ligandmpnn_env python=3.11
-#pip3 install -r requirements.txt
+conda create -n ligandmpnn_env python=3.11
+pip3 install -r requirements.txt -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple
 
 python run.py \
         --seed 111 \
@@ -21,9 +21,16 @@ python run.py \
 
 python run.py --seed 42 \
  --pdb_path "./inputs/sample_0.pdb" \
- --out_folder "./outputs_test/sample_seq" \
+ --out_folder "./outputs_test/sample_7v11" \
  --model_type "ligand_mpnn" \
- --checkpoint_protein_mpnn "./model_params/proteinmpnn_v_48_002.pt"
+ --checkpoint_protein_mpnn "./model_params/ligandmpnn_v_32_005_25.pt"
+
+python run.py --seed 42 \
+ --pdb_path "./inputs/sample_0_4i27.pdb" \
+ --out_folder "./outputs_test/sample_seq_4i27" \
+ --model_type "ligand_mpnn" \
+ --redesigned_residues "A190 A191 A192 A302 A303 A304 A305" \
+ --checkpoint_protein_mpnn "./model_params/ligandmpnn_v_32_005_25.pt"
 ```
 
 ### Dependencies
